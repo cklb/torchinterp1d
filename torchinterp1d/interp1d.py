@@ -96,7 +96,7 @@ class Interp1d(torch.autograd.Function):
             else:
                 ynew = out.reshape(shape_ynew)
         if out is None:
-            ynew = torch.zeros(*shape_ynew, device=device)
+            ynew = torch.zeros(*shape_ynew, dtype=y.dtype, device=device)
 
         # moving everything to the desired device in case it was not there
         # already (not handling the case things do not fit entirely, user will
